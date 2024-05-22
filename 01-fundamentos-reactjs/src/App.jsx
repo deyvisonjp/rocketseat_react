@@ -1,4 +1,4 @@
-// import { Header } from "./components/Header";
+import { Post } from "./components/Post";
 import { Sidebar } from "./components/Sidebar";
 import { Header } from "./components/Header";
 
@@ -14,13 +14,20 @@ function App() {
       <Header />
          
       <div className={styles.wrapper}>
+        
         <aside>
           <Sidebar />
         </aside>
 
         <main>
-          {/* <Post />
-          <Post /> */}
+          <Post 
+            author="Deyvison Paula"
+            content="Acelera Senior - Front End - RocketSeat"
+          />
+          <Post 
+            author="Deyvison Paula"
+            content="Acelera Senior - Back End - Desenvolvedor IO"
+          />
         </main>
 
       </div>
