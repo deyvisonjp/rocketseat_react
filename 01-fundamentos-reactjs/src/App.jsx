@@ -15,19 +15,10 @@ function App() {
          
       <div className={styles.wrapper}>
         
-        <aside>
-          <Sidebar />
-        </aside>
+        <Sidebar />
 
         <main>
-          <Post 
-            author="Deyvison Paula"
-            content="Acelera Senior - Front End - RocketSeat"
-          />
-          <Post 
-            author="Deyvison Paula"
-            content="Acelera Senior - Back End - Desenvolvedor IO"
-          />
+          <Post />
         </main>
 
       </div>
