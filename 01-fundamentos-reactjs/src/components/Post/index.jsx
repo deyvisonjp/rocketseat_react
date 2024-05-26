@@ -1,4 +1,5 @@
 /* eslint-disable react/prop-types */
+import { Comment } from '../Comment';
 import styles from './Post.module.css';
 
 export function Post() {
@@ -38,6 +39,12 @@ export function Post() {
                 </div>
                 
             </form>
+
+            <div className={styles.commmentList}>
+                <Comment />
+                <Comment />
+                <Comment />
+            </div>
 
         </article>
     )
