@@ -1,4 +1,5 @@
 /* eslint-disable react/prop-types */
+import { Avatar } from '../Avatar';
 import { Comment } from '../Comment';
 import styles from './Post.module.css';
 
@@ -8,7 +9,9 @@ export function Post() {
             <header>
                 
                 <div className={styles.author}>
-                    <img className={styles.avatar} src="https://github.com/deyvisonjp.png" />
+                    <Avatar
+                        srcAvatar="https://avatars.githubusercontent.com/u/38982851?v=4" 
+                    />
                     <div className={styles.authorInfo}>
                         <strong>Deyvison Paula</strong>
                         <span>Full Stack</span>
@@ -19,8 +22,9 @@ export function Post() {
             </header>
 
             <div className={styles.content}>
-                <p>Fala galerinha 😁</p>
-                <p>Vamos que vamos, mesmo com a preguiça, seja mais forte... Ultrapasse seus limites ... Plus Ultra! </p>
+                <p>Fala galerinha 💢</p>
+                <p>Vamos que vamos, Ultrapasse seus limites ... Plus Ultra! </p>
+                <p>Componentes servem para não repetir código e componentes podem ser utilizados em partes menores com códigos reutilizaveis</p>
                 <p>💥{' '}<a href="">deyvison.full/whiteForce </a></p>
                 <p>
                     <a href="">#AceleraSenior </a>{' '}
