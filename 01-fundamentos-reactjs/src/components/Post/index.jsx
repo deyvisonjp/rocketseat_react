@@ -37,15 +37,23 @@ export function Post({ author, content, publishedAt  }) {
     }
 
     function handleNewCommentChange() {
+        event.target.setCustomValidity('');
         setNewCommentText(event.target.value);
     }
 
+    function handleNewCommentInvalid() {
+        event.target.setCustomValidity('Esse campo é obrigatório!');
+    }
+
     function onDeleteComment(commentToDelete) {
+        // Pela imutabilidade, não vamos alterar a informação, mas reescrever/criando a lista/estado
         const listaComentariosAposDelete = comments.filter(comment => {
             return comment !== commentToDelete;
         })
         setComments(listaComentariosAposDelete);
     }
+
+    const isNewCommentEmpty = newCommentText.length === 0;
 
     return (
         <article className={styles.post}>
@@ -83,11 +91,18 @@ export function Post({ author, content, publishedAt  }) {
                     placeholder='Deixe um comentário'
                     value={newCommentText}
                     onChange={handleNewCommentChange}
+
+                    onInvalid={handleNewCommentInvalid}
+                    required
                 />
 
-                <div className={styles.btnPublish} >
-                    <button type='sumbit'>Publicar</button>
-                </div>
+                <footer>
+                    <div className={styles.btnPublish} >
+                        <button type='sumbit' disabled={isNewCommentEmpty}>
+                            Publicar
+                        </button>
+                    </div>
+                </footer>
                 
             </form>
 

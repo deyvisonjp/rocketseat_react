@@ -98,6 +98,15 @@
     transition: background-color 0.1s;
 }
 
+.commentForm button[type=submit]:not(:disabled):hover .btnPublish{
+    background: var(--green-300);
+}
+
+.commentForm button[type=submit]:disabled .btnPublish{
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
 .btnPublish {
     visibility: hidden;
     max-height: 0;
@@ -106,8 +115,4 @@
 .commentForm:focus-within .btnPublish{
     visibility: visible;
     max-height: none;
-}
-
-.commentForm button:hover{
-    background: var(--green-300);
 }
